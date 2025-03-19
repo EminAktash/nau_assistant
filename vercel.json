@@ -1,10 +1,10 @@
 {
     "version": 2,
     "builds": [
-      { "src": "index.py", "use": "@vercel/python" }
+      { "src": "nau_assistant_final.py", "use": "@vercel/python" }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "index.py" }
+      { "src": "/(.*)", "dest": "nau_assistant_final.py" }
     ],
     "env": {
       "PYTHONPATH": "."
