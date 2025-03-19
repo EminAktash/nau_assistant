@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>North American University AI Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+            background-color: #FAF9F6;
+        }
+
+        #sidebar {
+            width: 260px;
+            height: 100%;
+            background-color: #202123;
+            color: white;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        #main {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: #FAF9F6;
+            color: #333;
+        }
+
+        #chat-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        #input-container {
+            padding: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .new-chat-btn {
+            width: 100%;
+            background-color: #343541;
+            color: white;
+            border: 1px solid #565869;
+            border-radius: 5px;
+            padding: 12px;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .chat-item {
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .chat-item:hover {
+            background-color: #2A2B32;
+        }
+
+        .chat-item.active {
+            background-color: #2A2B32;
+        }
+
+        .message {
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .user-message {
+            background-color: #f8f9fa;
+        }
+
+        .assistant-message {
+            background-color: #FAF9F6;
+        }
+
+        .follow-up-message {
+            background-color: #f0f7ff;
+            border-left: 4px solid #0d6efd;
+        }
+
+        .message-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .input-group {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .sources {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .source-link {
+            color: #0d6efd;
+            text-decoration: underline;
+        }
+
+        .welcome-container {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .welcome-title {
+            font-size: 2.5rem;
+            color: #003366;
+            margin-bottom: 1rem;
+        }
+
+        .welcome-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .faq-button {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            color: #333;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .faq-button:hover {
+            background-color: #e9ecef;
+            transform: translateY(-2px);
+        }
+
+        .nau-header {
+            color: #003366;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sidebar">
+        <button class="new-chat-btn" id="new-chat-btn">
+            <i class="bi bi-plus-lg me-2"></i> New chat
+        </button>
+        <div id="chat-list">
+            <!-- Chat history will be populated here -->
+        </div>
+    </div>
+
+    <div id="main">
+        <div id="chat-container">
+            <!-- Welcome template -->
+            <template id="welcome-template">
+                <div class="d-flex justify-content-center align-items-center h-100" id="welcome-message">
+                    <div class="welcome-container">
+                        <h1 class="welcome-title">NAU Assistant</h1>
+                        <p class="welcome-subtitle">The official AI assistant for North American University. Ask
+                            questions about NAU programs, campus, admissions, and more.</p>
+
+                        <div class="faq-grid">
+                            <div class="faq-button" onclick="askQuestion('What are the tuition fees?')">
+                                What are the tuition fees?
+                            </div>
+                            <div class="faq-button" onclick="askQuestion('How do I apply for admission?')">
+                                How do I apply for admission?
+                            </div>
+                            <div class="faq-button" onclick="askQuestion('What programs does NAU offer?')">
+                                What programs does NAU offer?
+                            </div>
+                            <div class="faq-button" onclick="askQuestion('How to reset my password?')">
+                                How to reset my password?
+                            </div>
+                            <div class="faq-button" onclick="askQuestion('How do I select the courses?')">
+                                How do I select the courses?
+                            </div>
+                            <div class="faq-button" onclick="askQuestion('How do I access my NAU Portal?')">
+                                How do I access my NAU Portal?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <!-- Welcome content (will be populated from template) -->
+            <div id="welcome-container">
+                <!-- Welcome message will be cloned from template here -->
+            </div>
+
+            <!-- Chat messages will be populated here -->
+            <div id="messages" class="d-none">
+                <!-- Messages will appear here -->
+            </div>
+        </div>
+
+        <div id="input-container">
+            <div class="input-group">
+                <input type="text" id="user-input" class="form-control border" placeholder="Message NAU Assistant...">
+                <button class="btn btn-primary" id="send-btn">
+                    <i class="bi bi-send"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // State
+        let currentChatId = null;
+        const API_URL = 'http://localhost:5000/api';
+        let currentFollowUpId = null; // Track the current follow-up question
+
+        // DOM Elements
+        const newChatBtn = document.getElementById('new-chat-btn');
+        const chatList = document.getElementById('chat-list');
+        const messagesContainer = document.getElementById('messages');
+        const welcomeContainer = document.getElementById('welcome-container');
+        const welcomeTemplate = document.getElementById('welcome-template');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        // Function to show welcome screen
+        function showWelcomeScreen() {
+            // Clear welcome container
+            welcomeContainer.innerHTML = '';
+
+            // Clone the template content
+            const welcomeContent = welcomeTemplate.content.cloneNode(true);
+
+            // Add it to the welcome container
+            welcomeContainer.appendChild(welcomeContent);
+
+            // Show welcome, hide messages
+            welcomeContainer.style.display = 'block';
+            messagesContainer.classList.add('d-none');
+            messagesContainer.innerHTML = ''; // Clear any existing messages
+        }
+
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', function () {
+            loadChats();
+            showWelcomeScreen();
+        });
+
+        newChatBtn.addEventListener('click', function () {
+            // Reset current chat ID first
+            currentChatId = null;
+            currentFollowUpId = null;
+
+            // Clear messages and show welcome screen
+            messagesContainer.innerHTML = '';
+            showWelcomeScreen();
+
+            // Remove active class from all chat items
+            document.querySelectorAll('.chat-item').forEach(item => {
+                item.classList.remove('active');
+            });
+        });
+
+        sendBtn.addEventListener('click', sendMessage);
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Functions
+        async function loadChats() {
+            try {
+                const response = await fetch(`${API_URL}/chats`);
+                const chats = await response.json();
+
+                chatList.innerHTML = '';
+
+                chats.forEach(chat => {
+                    const chatItem = document.createElement('div');
+                    chatItem.className = 'chat-item';
+                    chatItem.dataset.id = chat.id;
+
+                    // Create a container for chat preview and delete button
+                    const chatContent = document.createElement('div');
+                    chatContent.className = 'd-flex justify-content-between align-items-center w-100';
+
+                    // Chat preview text
+                    const chatPreview = document.createElement('span');
+                    chatPreview.textContent = chat.preview;
+                    chatPreview.className = 'chat-preview';
+                    chatPreview.style.overflow = 'hidden';
+                    chatPreview.style.textOverflow = 'ellipsis';
+                    chatPreview.style.whiteSpace = 'nowrap';
+                    chatPreview.style.flexGrow = '1';
+                    chatPreview.style.cursor = 'pointer';
+                    chatPreview.addEventListener('click', () => loadChat(chat.id));
+
+                    // Delete button
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.innerHTML = '<i class="bi bi-trash"></i>';
+                    deleteBtn.className = 'btn btn-sm text-danger bg-transparent border-0 delete-btn';
+                    deleteBtn.title = 'Delete chat';
+                    deleteBtn.style.display = 'none'; // Hide by default
+                    deleteBtn.addEventListener('click', (e) => {
+                        e.stopPropagation(); // Prevent triggering chat loading
+                        deleteChat(chat.id);
+                    });
+
+                    // Add elements to container
+                    chatContent.appendChild(chatPreview);
+                    chatContent.appendChild(deleteBtn);
+                    chatItem.appendChild(chatContent);
+
+                    // Add hover effect
+                    chatItem.addEventListener('mouseenter', () => {
+                        deleteBtn.style.display = 'block'; // Show on hover
+                    });
+
+                    chatItem.addEventListener('mouseleave', () => {
+                        deleteBtn.style.display = 'none'; // Hide when not hovering
+                    });
+
+                    chatList.appendChild(chatItem);
+                });
+            } catch (error) {
+                console.error('Error loading chats:', error);
+            }
+        }
+
+        // Add delete chat function
+        async function deleteChat(chatId) {
+            if (!confirm('Are you sure you want to delete this chat?')) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_URL}/chats/${chatId}`, {
+                    method: 'DELETE'
+                });
+
+                if (response.ok) {
+                    // If the deleted chat was the current one, show welcome screen
+                    if (chatId === currentChatId) {
+                        currentChatId = null;
+                        showWelcomeScreen();
+                    }
+
+                    // Reload chat list
+                    await loadChats();
+                } else {
+                    console.error('Failed to delete chat');
+                }
+            } catch (error) {
+                console.error('Error deleting chat:', error);
+            }
+        }
+
+        async function createNewChat() {
+            try {
+                const response = await fetch(`${API_URL}/chats`, {
+                    method: 'POST'
+                });
+                const data = await response.json();
+                currentChatId = data.chat_id;
+
+                // Update chat list
+                await loadChats();
+
+                // Set active chat
+                setActiveChat(currentChatId);
+
+                return data.chat_id;
+            } catch (error) {
+                console.error('Error creating new chat:', error);
+                return null;
+            }
+        }
+
+        async function loadChat(chatId) {
+            try {
+                const response = await fetch(`${API_URL}/chats/${chatId}`);
+                const messages = await response.json();
+
+                // Set current chat ID
+                currentChatId = chatId;
+                currentFollowUpId = null;
+
+                // Clear messages
+                messagesContainer.innerHTML = '';
+
+                // Show messages container, hide welcome
+                messagesContainer.classList.remove('d-none');
+                welcomeContainer.style.display = 'none';
+
+                // Filter out system messages that shouldn't be displayed
+                const displayMessages = messages.filter(msg =>
+                    !msg.hasOwnProperty('follow_up') || msg.follow_up !== true
+                );
+
+                // Render messages
+                displayMessages.forEach(message => {
+                    renderMessage(message);
+
+                    // Check if this message has a follow-up
+                    const followUpMsg = messages.find(m =>
+                        m.hasOwnProperty('follow_up') &&
+                        m.follow_up === true &&
+                        m.original_question === message.original_question
+                    );
+
+                    if (followUpMsg) {
+                        renderMessage(followUpMsg);
+                        // Set current follow-up ID to the most recent one
+                        currentFollowUpId = followUpMsg.follow_up_id;
+                    }
+                });
+
+                // Set active chat
+                setActiveChat(chatId);
+
+                // Focus on input
+                userInput.focus();
+
+                // Scroll to bottom
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            } catch (error) {
+                console.error('Error loading chat:', error);
+            }
+        }
+
+        function setActiveChat(chatId) {
+            // Remove active class from all chat items
+            document.querySelectorAll('.chat-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Add active class to current chat
+            const chatItem = document.querySelector(`.chat-item[data-id="${chatId}"]`);
+            if (chatItem) {
+                chatItem.classList.add('active');
+            }
+        }
+
+        async function sendMessage() {
+            const message = userInput.value.trim();
+
+            if (!message) return;
+
+            // If no chat is active, create a new one
+            if (!currentChatId) {
+                await createNewChat();
+            }
+
+            // Hide welcome screen, show messages
+            welcomeContainer.style.display = 'none';
+            messagesContainer.classList.remove('d-none');
+
+            // Clear input
+            userInput.value = '';
+
+            // Add user message to UI
+            const userMessage = {
+                role: 'user',
+                content: message
+            };
+            renderMessage(userMessage);
+
+            // Add loading message
+            const loadingId = 'loading-' + Date.now();
+            const loadingHTML = `
+                <div class="message assistant-message" id="${loadingId}">
+                    <div class="message-content">
+                        <p><i class="bi bi-three-dots"></i> Thinking...</p>
+                    </div>
+                </div>
+            `;
+            messagesContainer.insertAdjacentHTML('beforeend', loadingHTML);
+
+            try {
+                // Prepare the request payload
+                const payload = {
+                    chat_id: currentChatId,
+                    query: message
+                };
+
+                // If this is a response to a follow-up question, include that info
+                if (currentFollowUpId) {
+                    payload.follow_up_to = currentFollowUpId;
+                    // Reset follow up ID after using it
+                    currentFollowUpId = null;
+                }
+
+                // Send message to API
+                const response = await fetch(`${API_URL}/chat`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                // Remove loading message
+                const loadingElement = document.getElementById(loadingId);
+                if (loadingElement) loadingElement.remove();
+
+                const data = await response.json();
+
+                // Add assistant message to UI
+                const assistantMessage = {
+                    role: 'assistant',
+                    content: data.answer,
+                    sources: data.sources
+                };
+                renderMessage(assistantMessage);
+
+                // Check if there's a follow-up question
+                if (data.follow_up) {
+                    // Wait a moment before showing the follow-up
+                    setTimeout(() => {
+                        const followUpMessage = {
+                            role: 'assistant',
+                            content: data.follow_up,
+                            follow_up: true,
+                            follow_up_id: data.follow_up_id
+                        };
+                        renderMessage(followUpMessage);
+
+                        // Set the current follow-up ID
+                        currentFollowUpId = data.follow_up_id;
+                    }, 1000);
+                }
+
+                // Update chat list
+                loadChats();
+            } catch (error) {
+                console.error('Error sending message:', error);
+                // Remove loading message
+                const loadingElement = document.getElementById(loadingId);
+                if (loadingElement) loadingElement.remove();
+
+                // Add error message
+                const errorHTML = `
+                    <div class="message assistant-message">
+                        <div class="message-content">
+                            <p class="text-danger">Error: Could not get a response. Please try again.</p>
+                        </div>
+                    </div>
+                `;
+                messagesContainer.insertAdjacentHTML('beforeend', errorHTML);
+            }
+        }
+
+        function renderMessage(message) {
+            const messageDiv = document.createElement('div');
+
+            // Add special class for follow-up questions
+            if (message.follow_up) {
+                messageDiv.className = `message follow-up-message`;
+            } else {
+                messageDiv.className = `message ${message.role}-message`;
+            }
+
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'message-content';
+
+            const paragraph = document.createElement('p');
+            paragraph.innerHTML = message.content.replace(/\n/g, '<br>');
+            contentDiv.appendChild(paragraph);
+
+            // Add follow-up ID as data attribute if it exists
+            if (message.follow_up_id) {
+                messageDiv.dataset.followUpId = message.follow_up_id;
+            }
+
+            // Add sources if they exist and not a follow-up question
+            if (message.sources && message.sources.length > 0 && !message.follow_up) {
+                const sourcesDiv = document.createElement('div');
+                sourcesDiv.className = 'sources';
+
+                const sourcesText = document.createElement('p');
+                sourcesText.textContent = 'Sources:';
+                sourcesDiv.appendChild(sourcesText);
+
+                const sourcesList = document.createElement('ul');
+                message.sources.forEach(source => {
+                    const sourceItem = document.createElement('li');
+                    const sourceLink = document.createElement('a');
+                    sourceLink.href = source;
+                    sourceLink.target = '_blank';
+                    sourceLink.className = 'source-link';
+                    sourceLink.textContent = source;
+                    sourceItem.appendChild(sourceLink);
+                    sourcesList.appendChild(sourceItem);
+                });
+
+                sourcesDiv.appendChild(sourcesList);
+                contentDiv.appendChild(sourcesDiv);
+            }
+
+            messageDiv.appendChild(contentDiv);
+            messagesContainer.appendChild(messageDiv);
+
+            // Scroll to bottom
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        // Function to ask a question from the FAQ buttons
+        function askQuestion(question) {
+            // First create a new chat if none exists
+            if (!currentChatId) {
+                createNewChat().then(() => {
+                    // Set the input value to the question
+                    userInput.value = question;
+                    // Send the message
+                    sendMessage();
+                });
+            } else {
+                // Set the input value to the question
+                userInput.value = question;
+                // Send the message
+                sendMessage();
+            }
+        }
+    </script>
+</body>
+
+</html>

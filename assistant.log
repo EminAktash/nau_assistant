@@ -1,0 +1,553 @@
+2025-03-18 11:40:37,420 - INFO - Use pytorch device_name: cpu
+2025-03-18 11:40:37,421 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-18 11:40:38,639 - INFO - Loaded 1976 chunks and embeddings
+2025-03-18 11:40:38,642 - INFO - Starting North American University AI Assistant
+2025-03-18 11:40:38,642 - INFO - Python version: 3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]
+2025-03-18 11:40:38,778 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 11:40:38,779 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-18 11:40:38,788 - INFO -  * Restarting with stat
+2025-03-18 11:40:44,271 - INFO - Use pytorch device_name: cpu
+2025-03-18 11:40:44,272 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-18 11:40:48,124 - INFO - Loaded 1976 chunks and embeddings
+2025-03-18 11:40:48,129 - INFO - Starting North American University AI Assistant
+2025-03-18 11:40:48,129 - INFO - Python version: 3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]
+2025-03-18 11:40:48,138 - WARNING -  * Debugger is active!
+2025-03-18 11:40:48,144 - INFO -  * Debugger PIN: 903-694-952
+2025-03-18 11:40:48,558 - INFO - 127.0.0.1 - - [18/Mar/2025 11:40:48] "[36mGET / HTTP/1.1[0m" 304 -
+2025-03-18 11:40:48,882 - INFO - 127.0.0.1 - - [18/Mar/2025 11:40:48] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:40:53,321 - INFO - 127.0.0.1 - - [18/Mar/2025 11:40:53] "POST /api/chats HTTP/1.1" 200 -
+2025-03-18 11:40:53,634 - INFO - 127.0.0.1 - - [18/Mar/2025 11:40:53] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:40:53,636 - INFO - 127.0.0.1 - - [18/Mar/2025 11:40:53] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-18 11:40:53,902 - INFO - Received chat request - chat_id: chat_1742316053, query: What are the tuition fees?, follow_up_to: None
+2025-03-18 11:40:53,930 - INFO - Calling Anthropic API...
+2025-03-18 11:41:03,354 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-18 11:41:03,360 - INFO - Successfully received response from Anthropic API
+2025-03-18 11:41:03,360 - INFO - Sending response to client
+2025-03-18 11:41:03,361 - INFO - 127.0.0.1 - - [18/Mar/2025 11:41:03] "POST /api/chat HTTP/1.1" 200 -
+2025-03-18 11:41:03,368 - INFO - 127.0.0.1 - - [18/Mar/2025 11:41:03] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:41:21,069 - INFO - 127.0.0.1 - - [18/Mar/2025 11:41:21] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-18 11:41:21,327 - INFO - Received chat request - chat_id: chat_1742316053, query: yes, follow_up_to: followup_housing_1742316053
+2025-03-18 11:41:21,338 - ERROR - Error processing query: Object of type float32 is not JSON serializable
+2025-03-18 11:41:21,340 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Emin\Desktop\NAU Assistant v2.0\naedu-assistant\nau_assistant_auto_updated.py", line 350, in chat
+    {json.dumps([msg for msg in chat_history[chat_id] if msg.get("role") in ["user", "assistant"] and not msg.get("is_follow_up", False)][-4:], indent=2)}
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 429, in _iterencode
+    yield from _iterencode_list(o, _current_indent_level)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type float32 is not JSON serializable
+
+2025-03-18 11:41:21,341 - INFO - 127.0.0.1 - - [18/Mar/2025 11:41:21] "[35m[1mPOST /api/chat HTTP/1.1[0m" 500 -
+2025-03-18 11:41:36,004 - INFO - 127.0.0.1 - - [18/Mar/2025 11:41:36] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-18 11:41:36,322 - INFO - Received chat request - chat_id: chat_1742316053, query: yes, I will use on-campus housing, follow_up_to: None
+2025-03-18 11:41:36,337 - INFO - Calling Anthropic API...
+2025-03-18 11:41:44,372 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-18 11:41:44,374 - INFO - Successfully received response from Anthropic API
+2025-03-18 11:41:44,374 - INFO - Sending response to client
+2025-03-18 11:41:44,374 - INFO - 127.0.0.1 - - [18/Mar/2025 11:41:44] "POST /api/chat HTTP/1.1" 200 -
+2025-03-18 11:41:44,384 - INFO - 127.0.0.1 - - [18/Mar/2025 11:41:44] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:42:13,024 - INFO - 127.0.0.1 - - [18/Mar/2025 11:42:13] "POST /api/chats HTTP/1.1" 200 -
+2025-03-18 11:42:13,270 - INFO - 127.0.0.1 - - [18/Mar/2025 11:42:13] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:42:13,331 - INFO - 127.0.0.1 - - [18/Mar/2025 11:42:13] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-18 11:42:13,332 - INFO - Received chat request - chat_id: chat_1742316133, query: How do I access my NAU Portal?, follow_up_to: None
+2025-03-18 11:42:13,346 - INFO - Calling Anthropic API...
+2025-03-18 11:42:17,799 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-18 11:42:17,801 - INFO - Successfully received response from Anthropic API
+2025-03-18 11:42:17,802 - INFO - Sending response to client
+2025-03-18 11:42:17,802 - INFO - 127.0.0.1 - - [18/Mar/2025 11:42:17] "POST /api/chat HTTP/1.1" 200 -
+2025-03-18 11:42:18,120 - INFO - 127.0.0.1 - - [18/Mar/2025 11:42:18] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:42:51,140 - INFO - 127.0.0.1 - - [18/Mar/2025 11:42:51] "[35m[1mGET /api/chats/chat_1742316053 HTTP/1.1[0m" 500 -
+2025-03-18 11:42:52,971 - INFO - 127.0.0.1 - - [18/Mar/2025 11:42:52] "[35m[1mGET /api/chats/chat_1742316053 HTTP/1.1[0m" 500 -
+2025-03-18 11:42:53,388 - INFO - 127.0.0.1 - - [18/Mar/2025 11:42:53] "[35m[1mGET /api/chats/chat_1742316133 HTTP/1.1[0m" 500 -
+2025-03-18 11:42:54,619 - INFO - 127.0.0.1 - - [18/Mar/2025 11:42:54] "[35m[1mGET /api/chats/chat_1742316053 HTTP/1.1[0m" 500 -
+2025-03-18 11:42:55,410 - INFO - 127.0.0.1 - - [18/Mar/2025 11:42:55] "[35m[1mGET /api/chats/chat_1742316133 HTTP/1.1[0m" 500 -
+2025-03-18 11:43:00,919 - INFO - 127.0.0.1 - - [18/Mar/2025 11:43:00] "[35m[1mGET /api/chats/chat_1742316053 HTTP/1.1[0m" 500 -
+2025-03-18 11:43:01,552 - INFO - 127.0.0.1 - - [18/Mar/2025 11:43:01] "[35m[1mGET /api/chats/chat_1742316133 HTTP/1.1[0m" 500 -
+2025-03-18 11:44:36,717 - INFO - 127.0.0.1 - - [18/Mar/2025 11:44:36] "[35m[1mGET /api/chats/chat_1742316053 HTTP/1.1[0m" 500 -
+2025-03-18 11:44:37,025 - INFO - 127.0.0.1 - - [18/Mar/2025 11:44:37] "[35m[1mGET /api/chats/chat_1742316133 HTTP/1.1[0m" 500 -
+2025-03-18 11:44:37,730 - INFO - 127.0.0.1 - - [18/Mar/2025 11:44:37] "[36mGET / HTTP/1.1[0m" 304 -
+2025-03-18 11:44:38,077 - INFO - 127.0.0.1 - - [18/Mar/2025 11:44:38] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:44:39,274 - INFO - 127.0.0.1 - - [18/Mar/2025 11:44:39] "[35m[1mGET /api/chats/chat_1742316053 HTTP/1.1[0m" 500 -
+2025-03-18 11:44:40,112 - INFO - 127.0.0.1 - - [18/Mar/2025 11:44:40] "[35m[1mGET /api/chats/chat_1742316133 HTTP/1.1[0m" 500 -
+2025-03-18 11:44:45,040 - INFO - 127.0.0.1 - - [18/Mar/2025 11:44:45] "[35m[1mGET /api/chats/chat_1742316053 HTTP/1.1[0m" 500 -
+2025-03-18 11:44:45,902 - INFO - 127.0.0.1 - - [18/Mar/2025 11:44:45] "[35m[1mGET /api/chats/chat_1742316133 HTTP/1.1[0m" 500 -
+2025-03-18 11:44:46,209 - INFO - 127.0.0.1 - - [18/Mar/2025 11:44:46] "POST /api/chats HTTP/1.1" 200 -
+2025-03-18 11:44:46,529 - INFO - 127.0.0.1 - - [18/Mar/2025 11:44:46] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:44:46,530 - INFO - 127.0.0.1 - - [18/Mar/2025 11:44:46] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-18 11:44:46,772 - INFO - Received chat request - chat_id: chat_1742316286, query: What programs does NAU offer?, follow_up_to: None
+2025-03-18 11:44:46,784 - INFO - Calling Anthropic API...
+2025-03-18 11:44:52,617 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-18 11:44:52,620 - INFO - Successfully received response from Anthropic API
+2025-03-18 11:44:52,620 - INFO - Sending response to client
+2025-03-18 11:44:52,621 - INFO - 127.0.0.1 - - [18/Mar/2025 11:44:52] "POST /api/chat HTTP/1.1" 200 -
+2025-03-18 11:44:52,625 - INFO - 127.0.0.1 - - [18/Mar/2025 11:44:52] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:53:23,204 - INFO -  * Detected change in 'C:\\Users\\Emin\\Desktop\\NAU Assistant v2.0\\naedu-assistant\\nau_assistant_final.py', reloading
+2025-03-18 11:53:23,858 - INFO -  * Restarting with stat
+2025-03-18 11:54:44,914 - INFO - Use pytorch device_name: cpu
+2025-03-18 11:54:44,915 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-18 11:54:45,961 - INFO - Loaded 1976 chunks and embeddings
+2025-03-18 11:54:45,964 - INFO - Starting North American University AI Assistant
+2025-03-18 11:54:45,977 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 11:54:45,977 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-18 11:54:45,978 - INFO -  * Restarting with stat
+2025-03-18 11:54:51,320 - INFO - Use pytorch device_name: cpu
+2025-03-18 11:54:51,320 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-18 11:54:52,213 - INFO - Loaded 1976 chunks and embeddings
+2025-03-18 11:54:52,215 - INFO - Starting North American University AI Assistant
+2025-03-18 11:54:52,224 - WARNING -  * Debugger is active!
+2025-03-18 11:54:52,229 - INFO -  * Debugger PIN: 903-694-952
+2025-03-18 11:54:52,648 - INFO - 127.0.0.1 - - [18/Mar/2025 11:54:52] "GET / HTTP/1.1" 200 -
+2025-03-18 11:54:52,974 - INFO - 127.0.0.1 - - [18/Mar/2025 11:54:52] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:54:54,296 - INFO - 127.0.0.1 - - [18/Mar/2025 11:54:54] "POST /api/chats HTTP/1.1" 200 -
+2025-03-18 11:54:54,609 - INFO - 127.0.0.1 - - [18/Mar/2025 11:54:54] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:54:54,868 - INFO - 127.0.0.1 - - [18/Mar/2025 11:54:54] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-18 11:54:54,928 - INFO - Received chat request - chat_id: chat_1742316894, query: What are the tuition fees?, follow_up_to: None
+2025-03-18 11:54:54,928 - INFO - Using predefined answer
+2025-03-18 11:54:54,929 - INFO - Sending predefined response to client
+2025-03-18 11:54:54,929 - INFO - 127.0.0.1 - - [18/Mar/2025 11:54:54] "POST /api/chat HTTP/1.1" 200 -
+2025-03-18 11:54:55,187 - INFO - 127.0.0.1 - - [18/Mar/2025 11:54:55] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:54:59,533 - INFO - Received chat request - chat_id: chat_1742316894, query: yes, follow_up_to: followup_1742316894
+2025-03-18 11:54:59,534 - INFO - 127.0.0.1 - - [18/Mar/2025 11:54:59] "POST /api/chat HTTP/1.1" 200 -
+2025-03-18 11:54:59,840 - INFO - 127.0.0.1 - - [18/Mar/2025 11:54:59] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:55:06,613 - INFO - 127.0.0.1 - - [18/Mar/2025 11:55:06] "POST /api/chats HTTP/1.1" 200 -
+2025-03-18 11:55:06,931 - INFO - 127.0.0.1 - - [18/Mar/2025 11:55:06] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:55:07,177 - INFO - 127.0.0.1 - - [18/Mar/2025 11:55:07] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-18 11:55:07,237 - INFO - Received chat request - chat_id: chat_1742316906, query: What programs does NAU offer?, follow_up_to: None
+2025-03-18 11:55:07,237 - INFO - Using predefined answer
+2025-03-18 11:55:07,237 - INFO - Sending predefined response to client
+2025-03-18 11:55:07,238 - INFO - 127.0.0.1 - - [18/Mar/2025 11:55:07] "POST /api/chat HTTP/1.1" 200 -
+2025-03-18 11:55:07,486 - INFO - 127.0.0.1 - - [18/Mar/2025 11:55:07] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:55:08,524 - INFO - 127.0.0.1 - - [18/Mar/2025 11:55:08] "GET /api/chats/chat_1742316894 HTTP/1.1" 200 -
+2025-03-18 11:55:09,801 - INFO - 127.0.0.1 - - [18/Mar/2025 11:55:09] "GET /api/chats/chat_1742316906 HTTP/1.1" 200 -
+2025-03-18 11:55:20,549 - INFO - 127.0.0.1 - - [18/Mar/2025 11:55:20] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-18 11:55:20,859 - INFO - Received chat request - chat_id: chat_1742316906, query: I want to do MBA, follow_up_to: followup_1742316907
+2025-03-18 11:55:20,860 - INFO - 127.0.0.1 - - [18/Mar/2025 11:55:20] "POST /api/chat HTTP/1.1" 200 -
+2025-03-18 11:55:21,122 - INFO - 127.0.0.1 - - [18/Mar/2025 11:55:21] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:55:35,097 - INFO - 127.0.0.1 - - [18/Mar/2025 11:55:35] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-18 11:55:35,407 - INFO - Received chat request - chat_id: chat_1742316906, query: I want to learn more about MBA, follow_up_to: None
+2025-03-18 11:55:35,435 - INFO - Calling Anthropic API...
+2025-03-18 11:55:40,313 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-18 11:55:40,318 - INFO - Successfully received response from Anthropic API
+2025-03-18 11:55:40,318 - INFO - Sending response to client
+2025-03-18 11:55:40,319 - INFO - 127.0.0.1 - - [18/Mar/2025 11:55:40] "POST /api/chat HTTP/1.1" 200 -
+2025-03-18 11:55:40,324 - INFO - 127.0.0.1 - - [18/Mar/2025 11:55:40] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:55:55,763 - INFO - 127.0.0.1 - - [18/Mar/2025 11:55:55] "POST /api/chats HTTP/1.1" 200 -
+2025-03-18 11:55:56,022 - INFO - 127.0.0.1 - - [18/Mar/2025 11:55:56] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:55:56,068 - INFO - 127.0.0.1 - - [18/Mar/2025 11:55:56] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-18 11:55:56,327 - INFO - Received chat request - chat_id: chat_1742316955, query: How do I access my NAU Portal?, follow_up_to: None
+2025-03-18 11:55:56,327 - INFO - Using predefined answer
+2025-03-18 11:55:56,327 - INFO - Sending predefined response to client
+2025-03-18 11:55:56,327 - INFO - 127.0.0.1 - - [18/Mar/2025 11:55:56] "POST /api/chat HTTP/1.1" 200 -
+2025-03-18 11:55:56,373 - INFO - 127.0.0.1 - - [18/Mar/2025 11:55:56] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:56:02,399 - INFO - 127.0.0.1 - - [18/Mar/2025 11:56:02] "POST /api/chats HTTP/1.1" 200 -
+2025-03-18 11:56:02,710 - INFO - 127.0.0.1 - - [18/Mar/2025 11:56:02] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:56:02,970 - INFO - 127.0.0.1 - - [18/Mar/2025 11:56:02] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-18 11:56:03,016 - INFO - Received chat request - chat_id: chat_1742316962, query: How to reset my password?, follow_up_to: None
+2025-03-18 11:56:03,016 - INFO - Using predefined answer
+2025-03-18 11:56:03,016 - INFO - Sending predefined response to client
+2025-03-18 11:56:03,016 - INFO - 127.0.0.1 - - [18/Mar/2025 11:56:03] "POST /api/chat HTTP/1.1" 200 -
+2025-03-18 11:56:03,279 - INFO - 127.0.0.1 - - [18/Mar/2025 11:56:03] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:56:08,036 - INFO - 127.0.0.1 - - [18/Mar/2025 11:56:08] "GET /api/chats/chat_1742316962 HTTP/1.1" 200 -
+2025-03-18 11:56:09,227 - INFO - 127.0.0.1 - - [18/Mar/2025 11:56:09] "GET /api/chats/chat_1742316955 HTTP/1.1" 200 -
+2025-03-18 11:56:13,380 - INFO - 127.0.0.1 - - [18/Mar/2025 11:56:13] "POST /api/chats HTTP/1.1" 200 -
+2025-03-18 11:56:13,688 - INFO - 127.0.0.1 - - [18/Mar/2025 11:56:13] "GET /api/chats HTTP/1.1" 200 -
+2025-03-18 11:56:13,950 - INFO - 127.0.0.1 - - [18/Mar/2025 11:56:13] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-18 11:56:13,995 - INFO - Received chat request - chat_id: chat_1742316973, query: How do I apply for admission?, follow_up_to: None
+2025-03-18 11:56:13,995 - INFO - Using predefined answer
+2025-03-18 11:56:13,995 - INFO - Sending predefined response to client
+2025-03-18 11:56:13,995 - INFO - 127.0.0.1 - - [18/Mar/2025 11:56:13] "POST /api/chat HTTP/1.1" 200 -
+2025-03-18 11:56:14,258 - INFO - 127.0.0.1 - - [18/Mar/2025 11:56:14] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:37:49,689 - INFO - Use pytorch device_name: cpu
+2025-03-19 08:37:49,690 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-19 08:37:54,223 - INFO - Loaded 1976 chunks and embeddings
+2025-03-19 08:37:54,225 - INFO - Starting North American University AI Assistant
+2025-03-19 08:37:54,309 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-19 08:37:54,310 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-19 08:37:54,318 - INFO -  * Restarting with stat
+2025-03-19 08:37:59,677 - INFO - Use pytorch device_name: cpu
+2025-03-19 08:37:59,678 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-19 08:38:00,866 - INFO - Loaded 1976 chunks and embeddings
+2025-03-19 08:38:00,868 - INFO - Starting North American University AI Assistant
+2025-03-19 08:38:00,874 - WARNING -  * Debugger is active!
+2025-03-19 08:38:00,879 - INFO -  * Debugger PIN: 903-694-952
+2025-03-19 08:38:01,306 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:01] "GET / HTTP/1.1" 200 -
+2025-03-19 08:38:01,394 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-19 08:38:01,678 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:01] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:38:06,932 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:06] "POST /api/chats HTTP/1.1" 200 -
+2025-03-19 08:38:07,252 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:07] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:38:07,498 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:07] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 08:38:07,561 - INFO - Received chat request - chat_id: chat_1742391486, query: What are the tuition fees?, follow_up_to: None
+2025-03-19 08:38:07,562 - INFO - Using predefined answer
+2025-03-19 08:38:07,562 - INFO - Sending predefined response to client
+2025-03-19 08:38:07,562 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:07] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 08:38:07,808 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:07] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:38:12,225 - INFO - Received chat request - chat_id: chat_1742391486, query: yes, follow_up_to: followup_1742391487
+2025-03-19 08:38:12,225 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:12] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 08:38:12,535 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:12] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:38:22,260 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:22] "POST /api/chats HTTP/1.1" 200 -
+2025-03-19 08:38:22,572 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:22] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:38:22,833 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:22] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 08:38:22,879 - INFO - Received chat request - chat_id: chat_1742391502, query: How do I access my NAU Portal?, follow_up_to: None
+2025-03-19 08:38:22,880 - INFO - Using predefined answer
+2025-03-19 08:38:22,880 - INFO - Sending predefined response to client
+2025-03-19 08:38:22,880 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:22] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 08:38:23,140 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:23] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:38:28,481 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:28] "POST /api/chats HTTP/1.1" 200 -
+2025-03-19 08:38:28,788 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:28] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:38:29,048 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:29] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 08:38:29,095 - INFO - Received chat request - chat_id: chat_1742391508, query: How to reset my password?, follow_up_to: None
+2025-03-19 08:38:29,096 - INFO - Using predefined answer
+2025-03-19 08:38:29,096 - INFO - Sending predefined response to client
+2025-03-19 08:38:29,096 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:29] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 08:38:29,359 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:29] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:38:32,785 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:32] "POST /api/chats HTTP/1.1" 200 -
+2025-03-19 08:38:33,094 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:33] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:38:33,356 - INFO - Received chat request - chat_id: chat_1742391512, query: How do I apply for admission?, follow_up_to: None
+2025-03-19 08:38:33,356 - INFO - Using predefined answer
+2025-03-19 08:38:33,356 - INFO - Sending predefined response to client
+2025-03-19 08:38:33,357 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:33] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 08:38:33,403 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:33] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:38:39,395 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:39] "POST /api/chats HTTP/1.1" 200 -
+2025-03-19 08:38:39,713 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:39] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:38:39,959 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:39] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 08:38:40,019 - INFO - Received chat request - chat_id: chat_1742391519, query: What programs does NAU offer?, follow_up_to: None
+2025-03-19 08:38:40,020 - INFO - Using predefined answer
+2025-03-19 08:38:40,020 - INFO - Sending predefined response to client
+2025-03-19 08:38:40,020 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:40] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 08:38:40,268 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:40] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:38:54,561 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:54] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 08:38:54,870 - INFO - Received chat request - chat_id: chat_1742391519, query: I want to apply to MBA, follow_up_to: followup_1742391520
+2025-03-19 08:38:54,870 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:54] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 08:38:55,132 - INFO - 127.0.0.1 - - [19/Mar/2025 08:38:55] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:39:05,606 - INFO - 127.0.0.1 - - [19/Mar/2025 08:39:05] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 08:39:05,921 - INFO - Received chat request - chat_id: chat_1742391519, query: I want to apply ther, follow_up_to: None
+2025-03-19 08:39:06,093 - INFO - Calling Anthropic API...
+2025-03-19 08:39:16,056 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-19 08:39:16,065 - INFO - Successfully received response from Anthropic API
+2025-03-19 08:39:16,065 - INFO - Sending response to client
+2025-03-19 08:39:16,066 - INFO - 127.0.0.1 - - [19/Mar/2025 08:39:16] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 08:39:16,081 - INFO - 127.0.0.1 - - [19/Mar/2025 08:39:16] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:40:16,210 - INFO - 127.0.0.1 - - [19/Mar/2025 08:40:16] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 08:40:16,473 - INFO - Received chat request - chat_id: chat_1742391519, query: I have just recently graduated from my bachelors degree, I will be applying to my masters in business administration, follow_up_to: None
+2025-03-19 08:40:16,490 - INFO - Calling Anthropic API...
+2025-03-19 08:40:23,763 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-19 08:40:23,765 - INFO - Successfully received response from Anthropic API
+2025-03-19 08:40:23,765 - INFO - Sending response to client
+2025-03-19 08:40:23,766 - INFO - 127.0.0.1 - - [19/Mar/2025 08:40:23] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 08:40:23,770 - INFO - 127.0.0.1 - - [19/Mar/2025 08:40:23] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:40:36,052 - INFO - 127.0.0.1 - - [19/Mar/2025 08:40:36] "POST /api/chats HTTP/1.1" 200 -
+2025-03-19 08:40:36,314 - INFO - 127.0.0.1 - - [19/Mar/2025 08:40:36] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:40:36,361 - INFO - 127.0.0.1 - - [19/Mar/2025 08:40:36] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 08:40:36,622 - INFO - Received chat request - chat_id: chat_1742391636, query: How do I select the courses?, follow_up_to: None
+2025-03-19 08:40:36,623 - INFO - Using predefined answer
+2025-03-19 08:40:36,623 - INFO - Sending predefined response to client
+2025-03-19 08:40:36,623 - INFO - 127.0.0.1 - - [19/Mar/2025 08:40:36] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 08:40:36,669 - INFO - 127.0.0.1 - - [19/Mar/2025 08:40:36] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:40:56,999 - INFO - 127.0.0.1 - - [19/Mar/2025 08:40:56] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 08:40:57,265 - INFO - Received chat request - chat_id: chat_1742391636, query: yes, is the advanced Web available next semester?, follow_up_to: followup_1742391636
+2025-03-19 08:40:57,266 - INFO - 127.0.0.1 - - [19/Mar/2025 08:40:57] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 08:40:57,310 - INFO - 127.0.0.1 - - [19/Mar/2025 08:40:57] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:41:08,631 - INFO - 127.0.0.1 - - [19/Mar/2025 08:41:08] "GET /api/chats/chat_1742391636 HTTP/1.1" 200 -
+2025-03-19 08:41:09,794 - INFO - 127.0.0.1 - - [19/Mar/2025 08:41:09] "[35m[1mGET /api/chats/chat_1742391519 HTTP/1.1[0m" 500 -
+2025-03-19 08:41:09,992 - INFO - 127.0.0.1 - - [19/Mar/2025 08:41:09] "GET /api/chats/chat_1742391512 HTTP/1.1" 200 -
+2025-03-19 08:41:10,549 - INFO - 127.0.0.1 - - [19/Mar/2025 08:41:10] "GET /api/chats/chat_1742391508 HTTP/1.1" 200 -
+2025-03-19 08:41:11,568 - INFO - 127.0.0.1 - - [19/Mar/2025 08:41:11] "GET /api/chats/chat_1742391502 HTTP/1.1" 200 -
+2025-03-19 08:41:11,902 - INFO - 127.0.0.1 - - [19/Mar/2025 08:41:11] "GET /api/chats/chat_1742391486 HTTP/1.1" 200 -
+2025-03-19 08:41:13,418 - INFO - 127.0.0.1 - - [19/Mar/2025 08:41:13] "[35m[1mGET /api/chats/chat_1742391519 HTTP/1.1[0m" 500 -
+2025-03-19 08:41:13,722 - INFO - 127.0.0.1 - - [19/Mar/2025 08:41:13] "GET /api/chats/chat_1742391512 HTTP/1.1" 200 -
+2025-03-19 08:41:15,693 - INFO - 127.0.0.1 - - [19/Mar/2025 08:41:15] "GET /api/chats/chat_1742391508 HTTP/1.1" 200 -
+2025-03-19 08:45:14,872 - INFO - 127.0.0.1 - - [19/Mar/2025 08:45:14] "GET / HTTP/1.1" 200 -
+2025-03-19 08:45:15,208 - INFO - 127.0.0.1 - - [19/Mar/2025 08:45:15] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:45:23,858 - INFO - 127.0.0.1 - - [19/Mar/2025 08:45:23] "OPTIONS /api/chats/chat_1742391636 HTTP/1.1" 200 -
+2025-03-19 08:45:24,167 - INFO - 127.0.0.1 - - [19/Mar/2025 08:45:24] "DELETE /api/chats/chat_1742391636 HTTP/1.1" 200 -
+2025-03-19 08:45:24,428 - INFO - 127.0.0.1 - - [19/Mar/2025 08:45:24] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:47:11,736 - INFO - 127.0.0.1 - - [19/Mar/2025 08:47:11] "GET / HTTP/1.1" 200 -
+2025-03-19 08:47:12,061 - INFO - 127.0.0.1 - - [19/Mar/2025 08:47:12] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:47:31,501 - INFO - 127.0.0.1 - - [19/Mar/2025 08:47:31] "OPTIONS /api/chats/chat_1742391512 HTTP/1.1" 200 -
+2025-03-19 08:47:31,811 - INFO - 127.0.0.1 - - [19/Mar/2025 08:47:31] "DELETE /api/chats/chat_1742391512 HTTP/1.1" 200 -
+2025-03-19 08:47:32,074 - INFO - 127.0.0.1 - - [19/Mar/2025 08:47:32] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:47:37,370 - INFO - 127.0.0.1 - - [19/Mar/2025 08:47:37] "POST /api/chats HTTP/1.1" 200 -
+2025-03-19 08:47:37,682 - INFO - 127.0.0.1 - - [19/Mar/2025 08:47:37] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:47:37,941 - INFO - 127.0.0.1 - - [19/Mar/2025 08:47:37] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 08:47:38,000 - INFO - Received chat request - chat_id: chat_1742392057, query: What are the tuition fees?, follow_up_to: None
+2025-03-19 08:47:38,001 - INFO - Using predefined answer
+2025-03-19 08:47:38,001 - INFO - Sending predefined response to client
+2025-03-19 08:47:38,001 - INFO - 127.0.0.1 - - [19/Mar/2025 08:47:38] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 08:47:38,249 - INFO - 127.0.0.1 - - [19/Mar/2025 08:47:38] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 08:47:42,259 - INFO - 127.0.0.1 - - [19/Mar/2025 08:47:42] "OPTIONS /api/chats/chat_1742392057 HTTP/1.1" 200 -
+2025-03-19 08:47:42,578 - INFO - 127.0.0.1 - - [19/Mar/2025 08:47:42] "DELETE /api/chats/chat_1742392057 HTTP/1.1" 200 -
+2025-03-19 08:47:42,824 - INFO - 127.0.0.1 - - [19/Mar/2025 08:47:42] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 09:04:23,906 - INFO - Use pytorch device_name: cpu
+2025-03-19 09:04:23,906 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-19 09:04:25,993 - INFO - Loaded 1976 chunks and embeddings
+2025-03-19 09:04:25,996 - INFO - Starting North American University AI Assistant
+2025-03-19 09:04:26,010 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-19 09:04:26,010 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-19 09:04:26,013 - INFO -  * Restarting with stat
+2025-03-19 09:04:32,057 - INFO - Use pytorch device_name: cpu
+2025-03-19 09:04:32,057 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-19 09:04:34,650 - INFO - Loaded 1976 chunks and embeddings
+2025-03-19 09:04:34,653 - INFO - Starting North American University AI Assistant
+2025-03-19 09:04:34,660 - WARNING -  * Debugger is active!
+2025-03-19 09:04:34,668 - INFO -  * Debugger PIN: 903-694-952
+2025-03-19 09:05:07,729 - INFO - 127.0.0.1 - - [19/Mar/2025 09:05:07] "[36mGET / HTTP/1.1[0m" 304 -
+2025-03-19 09:05:08,081 - INFO - 127.0.0.1 - - [19/Mar/2025 09:05:08] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 09:05:18,033 - INFO - 127.0.0.1 - - [19/Mar/2025 09:05:18] "POST /api/chats HTTP/1.1" 200 -
+2025-03-19 09:05:18,342 - INFO - 127.0.0.1 - - [19/Mar/2025 09:05:18] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 09:05:18,605 - INFO - 127.0.0.1 - - [19/Mar/2025 09:05:18] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 09:05:18,651 - INFO - Received chat request - chat_id: chat_1742393118, query: What are the tuition fees?, follow_up_to: None
+2025-03-19 09:05:18,651 - INFO - Using predefined answer
+2025-03-19 09:05:18,652 - INFO - Sending predefined response to client
+2025-03-19 09:05:18,652 - INFO - 127.0.0.1 - - [19/Mar/2025 09:05:18] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 09:05:18,911 - INFO - 127.0.0.1 - - [19/Mar/2025 09:05:18] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 09:05:24,802 - INFO - 127.0.0.1 - - [19/Mar/2025 09:05:24] "POST /api/chats HTTP/1.1" 200 -
+2025-03-19 09:05:25,112 - INFO - 127.0.0.1 - - [19/Mar/2025 09:05:25] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 09:05:25,371 - INFO - 127.0.0.1 - - [19/Mar/2025 09:05:25] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 09:05:25,432 - INFO - Received chat request - chat_id: chat_1742393124, query: How do I select the courses?, follow_up_to: None
+2025-03-19 09:05:25,433 - INFO - Using predefined answer
+2025-03-19 09:05:25,433 - INFO - Sending predefined response to client
+2025-03-19 09:05:25,434 - INFO - 127.0.0.1 - - [19/Mar/2025 09:05:25] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 09:05:25,680 - INFO - 127.0.0.1 - - [19/Mar/2025 09:05:25] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 09:05:32,535 - INFO - 127.0.0.1 - - [19/Mar/2025 09:05:32] "OPTIONS /api/chats/chat_1742393118 HTTP/1.1" 200 -
+2025-03-19 09:05:32,855 - INFO - 127.0.0.1 - - [19/Mar/2025 09:05:32] "DELETE /api/chats/chat_1742393118 HTTP/1.1" 200 -
+2025-03-19 09:05:33,102 - INFO - 127.0.0.1 - - [19/Mar/2025 09:05:33] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 09:05:34,643 - INFO - 127.0.0.1 - - [19/Mar/2025 09:05:34] "GET /api/chats/chat_1742393124 HTTP/1.1" 200 -
+2025-03-19 09:40:09,404 - INFO - Use pytorch device_name: cpu
+2025-03-19 09:40:09,404 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-19 09:40:13,208 - INFO - Loaded 1976 chunks and embeddings
+2025-03-19 09:40:13,210 - INFO - Starting North American University AI Assistant
+2025-03-19 09:40:13,225 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-19 09:40:13,225 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-19 09:40:13,228 - INFO -  * Restarting with stat
+2025-03-19 09:40:18,926 - INFO - Use pytorch device_name: cpu
+2025-03-19 09:40:18,927 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-19 09:40:23,912 - INFO - Loaded 1976 chunks and embeddings
+2025-03-19 09:40:23,914 - INFO - Starting North American University AI Assistant
+2025-03-19 09:40:23,920 - WARNING -  * Debugger is active!
+2025-03-19 09:40:23,925 - INFO -  * Debugger PIN: 903-694-952
+2025-03-19 09:40:24,344 - INFO - 127.0.0.1 - - [19/Mar/2025 09:40:24] "GET / HTTP/1.1" 200 -
+2025-03-19 09:40:24,347 - INFO - 127.0.0.1 - - [19/Mar/2025 09:40:24] "[36mGET / HTTP/1.1[0m" 304 -
+2025-03-19 09:40:24,712 - INFO - 127.0.0.1 - - [19/Mar/2025 09:40:24] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 09:40:24,974 - INFO - 127.0.0.1 - - [19/Mar/2025 09:40:24] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 09:56:40,280 - INFO - Use pytorch device_name: cpu
+2025-03-19 09:56:40,281 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-19 09:56:41,886 - INFO - Loaded 1976 chunks and embeddings
+2025-03-19 09:56:41,890 - INFO - Starting North American University AI Assistant
+2025-03-19 09:56:41,909 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-19 09:56:41,910 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-19 09:56:41,913 - INFO -  * Restarting with stat
+2025-03-19 09:56:49,827 - INFO - Use pytorch device_name: cpu
+2025-03-19 09:56:49,828 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-19 09:56:51,641 - INFO - Loaded 1976 chunks and embeddings
+2025-03-19 09:56:51,645 - INFO - Starting North American University AI Assistant
+2025-03-19 09:56:51,657 - WARNING -  * Debugger is active!
+2025-03-19 09:56:51,668 - INFO -  * Debugger PIN: 903-694-952
+2025-03-19 11:18:14,774 - INFO - Use pytorch device_name: cpu
+2025-03-19 11:18:14,778 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-19 11:18:16,415 - INFO - Loaded 1976 chunks and embeddings
+2025-03-19 11:18:16,419 - INFO - Starting North American University AI Assistant with HTTPS
+2025-03-19 11:18:16,480 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on https://127.0.0.1:5000
+2025-03-19 11:18:16,480 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-19 11:18:16,484 - INFO -  * Restarting with stat
+2025-03-19 11:18:24,940 - INFO - Use pytorch device_name: cpu
+2025-03-19 11:18:24,940 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-19 11:18:26,119 - INFO - Loaded 1976 chunks and embeddings
+2025-03-19 11:18:26,123 - INFO - Starting North American University AI Assistant with HTTPS
+2025-03-19 11:18:26,132 - WARNING -  * Debugger is active!
+2025-03-19 11:18:26,142 - INFO -  * Debugger PIN: 903-694-952
+2025-03-19 11:19:18,526 - INFO -  * Detected change in 'C:\\Users\\Emin\\Desktop\\NAU Assistant v2.0\\naedu-assistant\\nau_assistant_final.py', reloading
+2025-03-19 11:19:19,720 - INFO -  * Restarting with stat
+2025-03-19 11:19:28,026 - INFO - Use pytorch device_name: cpu
+2025-03-19 11:19:28,026 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-19 11:19:29,233 - INFO - Loaded 1976 chunks and embeddings
+2025-03-19 11:19:29,236 - INFO - Starting North American University AI Assistant
+2025-03-19 11:19:29,247 - WARNING -  * Debugger is active!
+2025-03-19 11:19:29,258 - INFO -  * Debugger PIN: 903-694-952
+2025-03-19 11:19:29,837 - ERROR - 127.0.0.1 - - [19/Mar/2025 11:19:29] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03jMa!H\x95\x87}')
+2025-03-19 11:19:29,837 - ERROR - 127.0.0.1 - - [19/Mar/2025 11:19:29] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03\x9b~¡³i¹')
+2025-03-19 11:19:29,839 - INFO - 127.0.0.1 - - [19/Mar/2025 11:19:29] "[35m[1m\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03jMa!H\x95\x87}\x1f0-Í8Ã[0m" HTTPStatus.BAD_REQUEST -
+2025-03-19 11:19:29,839 - ERROR - 127.0.0.1 - - [19/Mar/2025 11:19:29] code 400, message Bad request version ('ÅéÈLè<±sM¶\x01\x90')
+2025-03-19 11:19:29,839 - INFO - 127.0.0.1 - - [19/Mar/2025 11:19:29] "[35m[1m\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03\x9b~¡³i¹\x1e,Hâí¶=[0m" HTTPStatus.BAD_REQUEST -
+2025-03-19 11:19:29,840 - ERROR - 127.0.0.1 - - [19/Mar/2025 11:19:29] code 400, message Bad request version ('::\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063**\x00\x00\x00')
+2025-03-19 11:19:29,840 - INFO - 127.0.0.1 - - [19/Mar/2025 11:19:29] "[35m[1m\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03\x83e«,n|Û\x19{wá»Féi{o¿ÆwÛèEF+aË¾Ü\x0e'w GEµ½\x82¾sN1\x096}"\x0eYÏ\x14oï\x15Í&\x98­Ë'8y9 ß¾\x00 ZZ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06sZZ\x00\x00Di\x00\x05\x00\x03\x02h2\x003\x04ï\x04í**\x00\x01\x00\x11ì\x04À\x95'hLsE\x90u)Ñ¶?×p\x1d\x8b\x91\x86´GJ\x8d)q¡¥\x00[\x13iñ§iÄ\x0c¦nÉpî\x01qRÇ\x15\x9f\x00\x01w\x94+\x98&°\x0dù<\x1d7\x18ÿë9M\x83\x82Éy0ë"\x17\x94\x9a¤t¥Wñ8\x87ÍP[´ój\x9cxz¹Æa\x94\x1b.\x86Ò\x82\x81ðÈó± <°9³H\x89uÑ²~U\x06­2b¿5b`\x08¨\x17ìÄ£Ì\x1fÅéÈLè<±sM¶\x01\x90\x1d[0m" HTTPStatus.BAD_REQUEST -
+2025-03-19 11:19:29,841 - INFO - 127.0.0.1 - - [19/Mar/2025 11:19:29] "[35m[1m\x16\x03\x01\x06 \x01\x00\x06\x9c\x03\x034&RsØ\x81\x06\x14¢\x8d£\x0eÔ¤\x0c&ílÊÈ\x10÷h¹±\x04û^J\x9dc´ ³õÊ@kJ \x9c7\x8c\x04\x9eãä\x92ª\x8c\x03V¶ð\x7f\x9a3\x01s[\x89Ò\x1e«¯\x00 ::\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063**\x00\x00\x00[0m" HTTPStatus.BAD_REQUEST -
+2025-03-19 11:19:29,841 - ERROR - 127.0.0.1 - - [19/Mar/2025 11:19:29] code 400, message Bad request version ('á\x89YáÅ\x13ú\x87\x99¼ú')
+2025-03-19 11:19:29,842 - INFO - 127.0.0.1 - - [19/Mar/2025 11:19:29] "[35m[1m\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03\x16¹í÷vd\x86V\x09\x19¸I!\x05K(´\x93\x05\x14iè\x98îÀxu­¢\x10ÕÄ ÝÞ\x81/¹\x92VtV\x8d§C\x8bèI¾\\\x18á3\x09Ç\x09Ü8´ÑË½Ñ¾\x13\x00 JJ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06s\x8a\x8a\x00\x00\x00\x0b\x00\x02\x01\x00ÿ\x01\x00\x01\x00\x003\x04ï\x04íÊÊ\x00\x01\x00\x11ì\x04Àq\x81^.\x96\x9bÑt))\x14dÜ\x03:¬øÉÃ;\x8f¿°¦}ÂfUp¼Ós&ãX\x8c\x81\x06yÙª\x0b`\x15j­\x83©Çã\x88\x05ó\x12±ø7\x831\x8bÿç,®h\x8eó¼\x9a\x90\x97lÜqÈÇågqáÃÃè\x80×´Ë°(\x9fÖb|¦³\x00\x0ctc.³\x07d\x9c\x88»\x93Æ»HQ@ë\x0cv\x93X\x997a-uoSÕ$\x1f\x0bÈ>Æ\x07%\x9b\x14òÁ¶NDÆv+\x18\x07%\x17÷f~\x12J\x08æBµ{\\¨é°y«\x06\x87/à\x1d,¢m\x1e²&\x00§[Ûè\x0f\x8a\x9ap\x14ì»ÏZO½\x0c\x12\x10ÈËZC\x10\x11+/\x95\x18TïÂ\x08Ó\x92\x0f§Õ\x9a\x07JO\x82È\x87\x0f\x82³s\x97­¾I%\x16Ù\x91:Ô«@P\x04ÙÈÅ0aIÆe\x08Èöga\x15=f±eÞaYØ4\x98\x8eB\x91oÄF@\x91W\x16òb\x07Ø/K\x13\x0cï\x87lÐìh×wTø\x18eáØyiÇ\x0f\x0dbËØg©jLÆ\x80æm\x1d2`f\x10Ï\x13£\x1fá\x89YáÅ\x13ú\x87\x99¼ú[0m" HTTPStatus.BAD_REQUEST -
+2025-03-19 11:19:29,844 - ERROR - 127.0.0.1 - - [19/Mar/2025 11:19:29] code 400, message Bad request version ('ÀË\x8eÛ\x00\x17\x00\x00\x003\x04ï\x04í**\x00\x01\x00\x11ì\x04Àö¶yW\x8bdzH\x1b$\x84')
+2025-03-19 11:19:29,845 - INFO - 127.0.0.1 - - [19/Mar/2025 11:19:29] "[35m[1m\x16\x03\x01\x06 \x01\x00\x06\x9c\x03\x03\x065fxFÚ·-\x15Ãý\x03\x86R\x14\x96QùY\x86\x9a÷Ñ"ïáeõÆ¥<6 hm-ë>YS/0 \x14Yô\x08îý,\x0fu»Ë\x10rÇÜ8~ÍGÃ¤?\x00 jj\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063\x1a\x1a\x00\x00\x00\x0d\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00\x1b\x00\x03\x02\x00\x02þ\x0d\x00º\x00\x00\x01\x00\x01I\x00 Ø\x08ÿ×¯E®EÍ\x1e\x8bÇ\x88kÕÜ\x89Ò\x9a=\x9dw\x18È\x1a­\x91bØ'BC\x00\x901î-°Á,\x86¡b9IÈ%Ï£7#J&\x07\x10ú\x92kê.8õVQ:f\x03êTb#d¥ô¥)\x84¨Yaª\x1e¥\x81\x96±^Aû¥EzU\x10ÓÏPÁ\x18å\x86\x07Säï¥á\x88Û¥h¸KrÚ$±¼ÜcøPI(Û^ÌÌæ¼8ædß<(\x1fÙ~Tkô¦\x9c\x7f\x096\x10\x0eoÅ\x8b\x83`\x8f\x84\x03;ó¼>þ,9¿\x90yg4\x8dÿee\x1dÀË\x8eÛ\x00\x17\x00\x00\x003\x04ï\x04í**\x00\x01\x00\x11ì\x04Àö¶yW\x8bdzH\x1b$\x84[0m" HTTPStatus.BAD_REQUEST -
+2025-03-19 11:19:29,845 - ERROR - 127.0.0.1 - - [19/Mar/2025 11:19:29] code 400, message Bad request syntax ('\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03w8\x1bÝ/T\x02\x93¾Å1\xad°ù\x98\x06')
+2025-03-19 11:19:29,846 - INFO - 127.0.0.1 - - [19/Mar/2025 11:19:29] "[35m[1m\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03w8\x1bÝ/T\x02\x93¾Å1­°ù\x98\x06[0m" HTTPStatus.BAD_REQUEST -
+2025-03-19 11:19:29,847 - ERROR - 127.0.0.1 - - [19/Mar/2025 11:19:29] code 400, message Bad request version ('\x86\x8d%')
+2025-03-19 11:19:29,847 - INFO - 127.0.0.1 - - [19/Mar/2025 11:19:29] "[35m[1m\x16\x03\x01\x06 \x01\x00\x06\x9c\x03\x03ÀaD×GÍ\x1cW¶]F×@\x7fè(\x1e#\x96¬y\x03\x06W<òÔü'Vµ\x85 \x00\x9f3\x0dk\x12Ðc\x17\x9d\x02\x0c\x924³1By¬bðl×Ô\x81Ü­$R>>³\x00 ÚÚ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063\x8a\x8a\x00\x00\x003\x04ï\x04íÊÊ\x00\x01\x00\x11ì\x04À\x86\x8b)Þ%B¸³\x89\x91l\x85þD\x95Ï\x86¨qÃ\x0fó\x03¼\x0dáÇ=¡\x1dË\x13SÙ\x94@C9\x1aÒa\x06¹¸Í~E\x1a°\x92\x96þËXü[\x986ÈzvºJÝ\x06\\>(*­[¬\x96AÌÔw©DZ\x03Ã ·¡ê\x1b\x03¢\x0e\x1b\\"gr\x99e\x99\x9eà\x98\x19\x8e\x96\x83ó\x9a\x97£9&´\x1a¼û\x0b-rt3ÍÛ¶ã4(\\\x92\x90IÐ\x98´YaWé_ý[£¶Z\x12\x11+S\x0e\x12f\x80\x07½Ug\x1fÀ¤\x87\x11; ^é\x98Í\x83l\x10g]CÖ"P|º\x96\x15\x81\x1eÓ\x97I\x18\x9c¯ã\x1d\x04§\x8a:Ò\x8fOE\x0cÃÔlK[«$ìw\x15å\x16}\x93£\x83\x145¢vBqr\x88\x10\x06\x0c°«£v:;\x89±\x86ÃÔj\x91S/°)±\x0b\x01\x1bÙ´_.\x0b&Àg\x10°\x88x\x9bp\x15#Ù½)\x90!5\x8cf\x90\x90\x04\x1d\x13§§¥Æ\x97j\x07\x0bI5Ê·\x83\x84¤^\x09\x86\x8d%[0m" HTTPStatus.BAD_REQUEST -
+2025-03-19 11:19:35,121 - INFO - 127.0.0.1 - - [19/Mar/2025 11:19:35] "[36mGET / HTTP/1.1[0m" 304 -
+2025-03-19 11:19:35,482 - INFO - 127.0.0.1 - - [19/Mar/2025 11:19:35] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 11:19:37,032 - INFO - 127.0.0.1 - - [19/Mar/2025 11:19:37] "POST /api/chats HTTP/1.1" 200 -
+2025-03-19 11:19:37,343 - INFO - 127.0.0.1 - - [19/Mar/2025 11:19:37] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 11:19:37,607 - INFO - 127.0.0.1 - - [19/Mar/2025 11:19:37] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 11:19:37,667 - INFO - Received chat request - chat_id: chat_1742401177, query: How do I select the courses?, follow_up_to: None
+2025-03-19 11:19:37,668 - INFO - Using predefined answer
+2025-03-19 11:19:37,668 - INFO - Sending predefined response to client
+2025-03-19 11:19:37,669 - INFO - 127.0.0.1 - - [19/Mar/2025 11:19:37] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 11:19:37,916 - INFO - 127.0.0.1 - - [19/Mar/2025 11:19:37] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 11:19:42,203 - INFO - Received chat request - chat_id: chat_1742401177, query: yes, follow_up_to: followup_1742401177
+2025-03-19 11:19:42,204 - INFO - 127.0.0.1 - - [19/Mar/2025 11:19:42] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 11:19:42,520 - INFO - 127.0.0.1 - - [19/Mar/2025 11:19:42] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 11:45:45,749 - INFO - Use pytorch device_name: cpu
+2025-03-19 11:45:45,750 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-19 11:45:47,534 - INFO - Loaded 1976 chunks and embeddings
+2025-03-19 11:45:47,539 - INFO - Starting North American University AI Assistant
+2025-03-19 11:45:47,560 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-19 11:45:47,561 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-19 11:45:47,564 - INFO -  * Restarting with stat
+2025-03-19 11:45:55,801 - INFO - Use pytorch device_name: cpu
+2025-03-19 11:45:55,802 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-19 11:45:57,308 - INFO - Loaded 1976 chunks and embeddings
+2025-03-19 11:45:57,312 - INFO - Starting North American University AI Assistant
+2025-03-19 11:45:57,323 - WARNING -  * Debugger is active!
+2025-03-19 11:45:57,333 - INFO -  * Debugger PIN: 903-694-952
+2025-03-19 11:45:58,013 - INFO - 127.0.0.1 - - [19/Mar/2025 11:45:58] "[36mGET / HTTP/1.1[0m" 304 -
+2025-03-19 11:45:58,366 - INFO - 127.0.0.1 - - [19/Mar/2025 11:45:58] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 11:46:23,817 - INFO - 127.0.0.1 - - [19/Mar/2025 11:46:23] "POST /api/chats HTTP/1.1" 200 -
+2025-03-19 11:46:24,126 - INFO - 127.0.0.1 - - [19/Mar/2025 11:46:24] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 11:46:24,392 - INFO - 127.0.0.1 - - [19/Mar/2025 11:46:24] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 11:46:24,438 - INFO - Received chat request - chat_id: chat_1742402783, query: What are the tuition fees?, follow_up_to: None
+2025-03-19 11:46:24,439 - INFO - Using predefined answer
+2025-03-19 11:46:24,439 - INFO - Sending predefined response to client
+2025-03-19 11:46:24,440 - INFO - 127.0.0.1 - - [19/Mar/2025 11:46:24] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 11:46:24,705 - INFO - 127.0.0.1 - - [19/Mar/2025 11:46:24] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 11:46:34,165 - INFO - 127.0.0.1 - - [19/Mar/2025 11:46:34] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 11:46:34,480 - INFO - Received chat request - chat_id: chat_1742402783, query: Hello, follow_up_to: followup_1742402784
+2025-03-19 11:46:34,481 - INFO - 127.0.0.1 - - [19/Mar/2025 11:46:34] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 11:46:34,744 - INFO - 127.0.0.1 - - [19/Mar/2025 11:46:34] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 11:47:02,375 - INFO - 127.0.0.1 - - [19/Mar/2025 11:47:02] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 11:47:02,641 - INFO - Received chat request - chat_id: chat_1742402783, query: I want to stay on campus, follow_up_to: None
+2025-03-19 11:47:02,928 - INFO - Calling Anthropic API...
+2025-03-19 11:47:07,315 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-19 11:47:07,335 - INFO - Successfully received response from Anthropic API
+2025-03-19 11:47:07,335 - INFO - Sending response to client
+2025-03-19 11:47:07,337 - INFO - 127.0.0.1 - - [19/Mar/2025 11:47:07] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 11:47:07,344 - INFO - 127.0.0.1 - - [19/Mar/2025 11:47:07] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 11:47:24,646 - INFO - 127.0.0.1 - - [19/Mar/2025 11:47:24] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 11:47:24,908 - INFO - Received chat request - chat_id: chat_1742402783, query: Hello, follow_up_to: None
+2025-03-19 11:47:24,942 - INFO - Calling Anthropic API...
+2025-03-19 11:47:28,217 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-19 11:47:28,219 - INFO - Successfully received response from Anthropic API
+2025-03-19 11:47:28,219 - INFO - Sending response to client
+2025-03-19 11:47:28,219 - INFO - 127.0.0.1 - - [19/Mar/2025 11:47:28] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 11:47:28,230 - INFO - 127.0.0.1 - - [19/Mar/2025 11:47:28] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 11:48:07,537 - INFO - 127.0.0.1 - - [19/Mar/2025 11:48:07] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 11:48:07,800 - INFO - Received chat request - chat_id: chat_1742402783, query: Hello, follow_up_to: None
+2025-03-19 11:48:07,829 - INFO - Calling Anthropic API...
+2025-03-19 11:48:11,166 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-19 11:48:11,170 - INFO - Successfully received response from Anthropic API
+2025-03-19 11:48:11,171 - INFO - Sending response to client
+2025-03-19 11:48:11,172 - INFO - 127.0.0.1 - - [19/Mar/2025 11:48:11] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 11:48:11,178 - INFO - 127.0.0.1 - - [19/Mar/2025 11:48:11] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 11:48:18,572 - INFO - 127.0.0.1 - - [19/Mar/2025 11:48:18] "[35m[1mGET /api/chats/chat_1742402783 HTTP/1.1[0m" 500 -
+2025-03-19 11:49:45,577 - INFO - 127.0.0.1 - - [19/Mar/2025 11:49:45] "POST /api/chats HTTP/1.1" 200 -
+2025-03-19 11:49:45,839 - INFO - 127.0.0.1 - - [19/Mar/2025 11:49:45] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 11:49:45,885 - INFO - 127.0.0.1 - - [19/Mar/2025 11:49:45] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 11:49:46,162 - INFO - Received chat request - chat_id: chat_1742402985, query: What are the tuition fees?, follow_up_to: None
+2025-03-19 11:49:46,162 - INFO - Using predefined answer
+2025-03-19 11:49:46,163 - INFO - Sending predefined response to client
+2025-03-19 11:49:46,163 - INFO - 127.0.0.1 - - [19/Mar/2025 11:49:46] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 11:49:46,193 - INFO - 127.0.0.1 - - [19/Mar/2025 11:49:46] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 11:49:51,484 - INFO - 127.0.0.1 - - [19/Mar/2025 11:49:51] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 11:49:51,804 - INFO - Received chat request - chat_id: chat_1742402985, query: yes, follow_up_to: followup_1742402986
+2025-03-19 11:49:51,806 - INFO - 127.0.0.1 - - [19/Mar/2025 11:49:51] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 11:49:52,054 - INFO - 127.0.0.1 - - [19/Mar/2025 11:49:52] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 11:50:26,533 - INFO - 127.0.0.1 - - [19/Mar/2025 11:50:26] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 11:50:26,850 - INFO - Received chat request - chat_id: chat_1742402985, query: Let's say I take 3 classes with 14 meals a day, how much will i pay a semester, follow_up_to: None
+2025-03-19 11:50:26,897 - INFO - Calling Anthropic API...
+2025-03-19 11:50:33,331 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-19 11:50:33,340 - INFO - Successfully received response from Anthropic API
+2025-03-19 11:50:33,340 - INFO - Sending response to client
+2025-03-19 11:50:33,341 - INFO - 127.0.0.1 - - [19/Mar/2025 11:50:33] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 11:50:33,348 - INFO - 127.0.0.1 - - [19/Mar/2025 11:50:33] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 11:56:55,887 - INFO - Use pytorch device_name: cpu
+2025-03-19 11:56:55,888 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-19 11:56:57,411 - INFO - Loaded 1976 chunks and embeddings
+2025-03-19 11:56:57,415 - INFO - Starting North American University AI Assistant
+2025-03-19 11:56:57,436 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-19 11:56:57,437 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-19 11:56:57,439 - INFO -  * Restarting with stat
+2025-03-19 11:57:05,848 - INFO - Use pytorch device_name: cpu
+2025-03-19 11:57:05,850 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-19 11:57:07,079 - INFO - Loaded 1976 chunks and embeddings
+2025-03-19 11:57:07,083 - INFO - Starting North American University AI Assistant
+2025-03-19 11:57:07,092 - WARNING -  * Debugger is active!
+2025-03-19 11:57:07,104 - INFO -  * Debugger PIN: 903-694-952
+2025-03-19 11:57:07,937 - INFO - 127.0.0.1 - - [19/Mar/2025 11:57:07] "[36mGET / HTTP/1.1[0m" 304 -
+2025-03-19 11:57:08,273 - INFO - 127.0.0.1 - - [19/Mar/2025 11:57:08] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 12:00:12,878 - INFO - Use pytorch device_name: cpu
+2025-03-19 12:00:12,879 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-19 12:00:14,072 - INFO - Loaded 1976 chunks and embeddings
+2025-03-19 12:00:14,076 - INFO - Starting North American University AI Assistant
+2025-03-19 12:00:14,096 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-19 12:00:14,097 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-19 12:00:14,100 - INFO -  * Restarting with stat
+2025-03-19 12:00:22,017 - INFO - Use pytorch device_name: cpu
+2025-03-19 12:00:22,017 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-19 12:00:23,429 - INFO - Loaded 1976 chunks and embeddings
+2025-03-19 12:00:23,435 - INFO - Starting North American University AI Assistant
+2025-03-19 12:00:23,445 - WARNING -  * Debugger is active!
+2025-03-19 12:00:23,456 - INFO -  * Debugger PIN: 903-694-952
+2025-03-19 12:00:24,152 - INFO - 127.0.0.1 - - [19/Mar/2025 12:00:24] "[36mGET / HTTP/1.1[0m" 304 -
+2025-03-19 12:00:24,503 - INFO - 127.0.0.1 - - [19/Mar/2025 12:00:24] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 12:00:45,077 - INFO - 127.0.0.1 - - [19/Mar/2025 12:00:45] "POST /api/chats HTTP/1.1" 200 -
+2025-03-19 12:00:45,395 - INFO - 127.0.0.1 - - [19/Mar/2025 12:00:45] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 12:00:45,659 - INFO - 127.0.0.1 - - [19/Mar/2025 12:00:45] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 12:00:45,720 - INFO - Received chat request - chat_id: chat_1742403645, query: What programs does NAU offer?, follow_up_to: None
+2025-03-19 12:00:45,721 - INFO - Using predefined answer
+2025-03-19 12:00:45,721 - INFO - Sending predefined response to client
+2025-03-19 12:00:45,722 - INFO - 127.0.0.1 - - [19/Mar/2025 12:00:45] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 12:00:45,968 - INFO - 127.0.0.1 - - [19/Mar/2025 12:00:45] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 12:00:56,460 - INFO - 127.0.0.1 - - [19/Mar/2025 12:00:56] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 12:00:56,776 - INFO - Received chat request - chat_id: chat_1742403645, query: business, follow_up_to: followup_1742403645
+2025-03-19 12:00:56,777 - INFO - 127.0.0.1 - - [19/Mar/2025 12:00:56] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 12:00:57,045 - INFO - 127.0.0.1 - - [19/Mar/2025 12:00:57] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 12:01:12,866 - INFO - 127.0.0.1 - - [19/Mar/2025 12:01:12] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 12:01:13,185 - INFO - Received chat request - chat_id: chat_1742403645, query: clear, follow_up_to: None
+2025-03-19 12:01:13,239 - INFO - Calling Anthropic API...
+2025-03-19 12:01:18,271 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-19 12:01:18,280 - INFO - Successfully received response from Anthropic API
+2025-03-19 12:01:18,280 - INFO - Sending response to client
+2025-03-19 12:01:18,281 - INFO - 127.0.0.1 - - [19/Mar/2025 12:01:18] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 12:01:18,288 - INFO - 127.0.0.1 - - [19/Mar/2025 12:01:18] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 12:01:29,642 - INFO - 127.0.0.1 - - [19/Mar/2025 12:01:29] "OPTIONS /api/chats/chat_1742403645 HTTP/1.1" 200 -
+2025-03-19 12:01:29,904 - INFO - 127.0.0.1 - - [19/Mar/2025 12:01:29] "DELETE /api/chats/chat_1742403645 HTTP/1.1" 200 -
+2025-03-19 12:01:29,966 - INFO - 127.0.0.1 - - [19/Mar/2025 12:01:29] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 12:02:48,711 - INFO - 127.0.0.1 - - [19/Mar/2025 12:02:48] "POST /api/chats HTTP/1.1" 200 -
+2025-03-19 12:02:48,974 - INFO - 127.0.0.1 - - [19/Mar/2025 12:02:48] "GET /api/chats HTTP/1.1" 200 -
+2025-03-19 12:02:49,020 - INFO - 127.0.0.1 - - [19/Mar/2025 12:02:49] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-03-19 12:02:49,298 - INFO - Received chat request - chat_id: chat_1742403768, query: i am a new student, i didnt get my password, follow_up_to: None
+2025-03-19 12:02:49,343 - INFO - Calling Anthropic API...
+2025-03-19 12:02:56,381 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-19 12:02:56,384 - INFO - Successfully received response from Anthropic API
+2025-03-19 12:02:56,384 - INFO - Sending response to client
+2025-03-19 12:02:56,385 - INFO - 127.0.0.1 - - [19/Mar/2025 12:02:56] "POST /api/chat HTTP/1.1" 200 -
+2025-03-19 12:02:56,395 - INFO - 127.0.0.1 - - [19/Mar/2025 12:02:56] "GET /api/chats HTTP/1.1" 200 -
