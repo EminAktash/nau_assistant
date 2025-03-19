@@ -1,4 +1,13 @@
-/venv
+# Environment variables
 .env
+
+# Large files and databases
+chroma_db/
+*.sqlite3
 *.pkl
+
+# Python
 __pycache__/
+*.py[cod]
+
+/venv
